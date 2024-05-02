@@ -1,0 +1,104 @@
+@import './partials/bootstrap-overrides';
+@import './partials/general';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+
+  //TVheader
+  h1 {
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+
+  //carousel
+  h4 {
+    font-weight: 600;
+  }
+
+  .carousel {
+    
+    margin-bottom: 2rem;
+
+    //placeholder
+
+    .carousel-img-placeholder {
+      height: 118px;
+      width: 210px;
+      background-color: $secondary;
+    }
+
+   //arrow buttons
+    .gallery {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      .arrow {
+        cursor: pointer;
+        background: none; 
+        border: none; 
+        position: absolute;
+        top: 0; 
+        bottom: 0; 
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+
+        &.right-arrow{
+          right: 0;
+          &:hover {
+          background-image: linear-gradient(to left, black, transparent);
+          }
+        } 
+        &.left-arrow:hover{
+          background-image: linear-gradient(to right, black, transparent);
+        }
+        &:hover {
+          transform: scale(1.2);
+        }
+        &:active{
+          transform: scale(1.05);
+        }
+    }
+
+    .slider {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scroll-behavior: smooth;
+      display: flex; 
+      padding: 10px 0;
+    }
+  }
+    .slider::-webkit-scrollbar { //remove horizontal scrollbar
+      display: none;
+    }
+
+    .img-wrapper{ //img are now the same size
+      width: 100%;
+      position: relative;
+      aspect-ratio: 16/9;
+      min-height: 118px;
+
+    img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.2s, object-position 3s ease;
+
+      .img-fluid {
+        height: 100%;
+        width: 100%;
+        background-color: $secondary;
+      }
+
+    &:hover {
+      transform: scale(1.1);
+      z-index: 10;
+      object-position: bottom;
+    }}
+  }}

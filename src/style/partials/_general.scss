@@ -1,0 +1,84 @@
+//navbar
+.bg-tertiary {
+    background-color: $tertiary;
+  }
+  nav {
+    font-weight: 500;
+  }
+
+  .btn-icon {
+    background-color: transparent;
+    border: none;
+    &:hover{
+        background-color: inherit;
+        border: inherit;
+    }
+    &:focus{
+        background-color: $dark;
+    }
+    &:active{
+        background-color: $darker !important;
+    }
+  }
+
+  .form-control:focus {
+    border-color: $secondary-emphasis;
+    outline: 0;
+    box-shadow: 0 0 5px 0rem rgb(255 255 255 / 33%);
+  }
+
+  //footer
+
+  .footer-icon {
+    font-size: 17px;
+    color: $muted-emphasis;
+    &:hover{
+        cursor: pointer;
+        color: $secondary-emphasis;
+    }
+  }
+  
+  .footer-links {
+    font-size: 13px;
+  
+    p {
+      margin-bottom: 0.3em;
+      color: $muted-emphasis;
+    }
+  
+    a {
+      color: $muted-emphasis;
+      text-decoration: none;
+      &:hover {
+        color: $secondary-emphasis;
+    }
+    }
+  }
+  
+  .footer-button {
+    border-radius: 6px;
+  }
+  
+  .copyright {
+    color: $muted-emphasis;
+    font-size: 11px;
+  }
+
+  //scrollbar
+
+  ::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff25;
+    border-radius: 75px;
+    &:hover {
+        background-color: $light;
+    }
+}
+  
