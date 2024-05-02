@@ -5,6 +5,7 @@ import SingleContentPlaceholder from './SingleContentPlaceholder'
 import leftArrow from '../assets/img/svg/left-arrow2.svg'
 import rightArrow from '../assets/img/svg/right-arrow2.svg'
 import NoContent from './NoContent'
+import { Link } from 'react-router-dom'
 
 const ContentList = ({ searchQuery, headerText }) => {
   const [media, setMedia] = useState([])
@@ -59,6 +60,7 @@ const ContentList = ({ searchQuery, headerText }) => {
 
   useEffect(() => {
     fetchMedia()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery])
 
   if (loading) {
@@ -88,11 +90,14 @@ const ContentList = ({ searchQuery, headerText }) => {
           </button>
           <div className="slider row gx-1" ref={scrollRef}>
             {media.map((content) => (
-              <SingleContent
-                key={content.imdbID}
-                src={content.Poster}
-                imbdID={content.imdbID}
-              />
+              <div className={`col-6 col-sm-4 col-md-3 col-lg-2 carousel-img`}>
+                <Link to={`/details/${content.imdbID}`}>
+                  <SingleContent
+                    key={`id:${content.imdbID}`}
+                    src={content.Poster}
+                  />
+                </Link>
+              </div>
             ))}
           </div>
           <button className="arrow right-arrow" onClick={scrollRight}>

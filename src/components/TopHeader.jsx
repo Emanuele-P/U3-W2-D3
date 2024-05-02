@@ -4,6 +4,12 @@ import { useLocation } from 'react-router-dom'
 
 const TopHeader = () => {
   const location = useLocation()
+  const showDropdown =
+    location.pathname === '/' || location.pathname === '/Tvshows'
+
+  if (!showDropdown) {
+    return null
+  }
 
   return (
     <Container fluid className="px-4">
@@ -47,5 +53,4 @@ const TopHeader = () => {
     </Container>
   )
 }
-
 export default TopHeader

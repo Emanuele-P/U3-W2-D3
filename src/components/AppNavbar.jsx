@@ -11,7 +11,7 @@ import kids from '../assets/img/kids_icon.png'
 import avatar from '../assets/img/avatar.png'
 import searchIcon from '../assets/img/svg/search-icon.svg'
 import bellIcon from '../assets/img/svg/notification-icon.svg'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 function AppNavbar() {
   const location = useLocation()
@@ -21,9 +21,9 @@ function AppNavbar() {
     <header>
       <Navbar expand="lg" className="bg-tertiary">
         <Container fluid>
-          <Navbar.Brand href="#">
-            <img src={logo} alt="Netflix logo" width="100" />
-          </Navbar.Brand>
+          <Link className="navbar-brand" to="/">
+            <img src={logo} alt="Netflix Logo" width="100" />
+          </Link>
           <Navbar.Toggle aria-controls="navbarNavDropdown" />
           <Navbar.Collapse id="navbarNavDropdown">
             <Nav className="me-auto">
@@ -41,9 +41,9 @@ function AppNavbar() {
               <Nav.Link href="#">Kids</Nav.Link>
               <Nav.Link href="#">Notifications</Nav.Link>
               <NavDropdown title="Personal Profile" id="nav-dropdown">
-                <NavDropdown.Item href="#" target="_blank">
+                <Link to="/profile" className="dropdown-item">
                   Profile
-                </NavDropdown.Item>
+                </Link>
                 <NavDropdown.Item href="#">Settings</NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -51,7 +51,13 @@ function AppNavbar() {
               <Form className="d-none d-lg-flex" id="search-form">
                 <FormControl
                   type="search"
-                  placeholder="Search"
+                  placeholder={
+                    location.pathname === '/'
+                      ? 'Search by title'
+                      : location.pathname === '/Tvshows'
+                      ? 'Search tv show'
+                      : 'Search'
+                  }
                   className="me-2"
                 />
               </Form>
@@ -69,9 +75,9 @@ function AppNavbar() {
                 id="nav-profile-dropdown"
                 align="end"
               >
-                <NavDropdown.Item href="#" target="_blank">
+                <Link to="/profile" className="dropdown-item">
                   Profile
-                </NavDropdown.Item>
+                </Link>
                 <NavDropdown.Item href="#">Settings</NavDropdown.Item>
               </NavDropdown>
             </Nav>
