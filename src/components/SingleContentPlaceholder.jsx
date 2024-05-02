@@ -1,7 +1,7 @@
 import React from 'react'
 import { Placeholder } from 'react-bootstrap'
 
-function SingleContentPlaceholder() {
+const SingleContentPlaceholder = () => {
   return (
     <div
       className="col-6 col-sm-4 col-md-3 col-lg-2"

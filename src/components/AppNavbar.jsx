@@ -11,8 +11,12 @@ import kids from '../assets/img/kids_icon.png'
 import avatar from '../assets/img/avatar.png'
 import searchIcon from '../assets/img/svg/search-icon.svg'
 import bellIcon from '../assets/img/svg/notification-icon.svg'
+import { NavLink, useLocation } from 'react-router-dom'
 
 function AppNavbar() {
+  const location = useLocation()
+  console.log(location.pathname)
+
   return (
     <header>
       <Navbar expand="lg" className="bg-tertiary">
@@ -23,13 +27,15 @@ function AppNavbar() {
           <Navbar.Toggle aria-controls="navbarNavDropdown" />
           <Navbar.Collapse id="navbarNavDropdown">
             <Nav className="me-auto">
-              <Nav.Link href="#" active>
+              <NavLink className="nav-link" to="/">
                 Home
-              </Nav.Link>
-              <Nav.Link href="#">Tv Shows</Nav.Link>
-              <Nav.Link href="#">Movies</Nav.Link>
-              <Nav.Link href="#">Recently Added</Nav.Link>
-              <Nav.Link href="#">My List</Nav.Link>
+              </NavLink>
+              <NavLink className="nav-link" to="/Tvshows">
+                Tv Shows
+              </NavLink>
+              <Nav.Link className="nav-link">Movies</Nav.Link>
+              <Nav.Link className="nav-link">Recently Added</Nav.Link>
+              <Nav.Link className="nav-link">My List</Nav.Link>
             </Nav>
             <Nav className="d-lg-none">
               <Nav.Link href="#">Kids</Nav.Link>

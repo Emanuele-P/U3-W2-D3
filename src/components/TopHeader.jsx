@@ -1,12 +1,21 @@
 import React from 'react'
 import { Button, Dropdown, ButtonGroup, Container } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 
 const TopHeader = () => {
+  const location = useLocation()
+
   return (
     <Container fluid className="px-4">
       <section className="my-4 d-flex align-items-center justify-content-between">
         <div className="d-flex flex-grow-1 align-items-center justify-content-between justify-content-sm-start">
-          <h1 className="me-3">TV Shows</h1>
+          <h1 className="me-3">
+            {location.pathname === '/'
+              ? 'Home'
+              : location.pathname === '/Tvshows'
+              ? 'Tv Shows'
+              : ''}
+          </h1>
           <Dropdown>
             <Dropdown.Toggle variant="outline-light" className="interactive">
               Genres
@@ -28,10 +37,10 @@ const TopHeader = () => {
           aria-label="Basic outlined example"
         >
           <Button variant="outline-secondary" className="interactive">
-            <i class="bi bi-grid icons"></i>
+            <i className="bi bi-grid icons"></i>
           </Button>
           <Button variant="outline-light" className="interactive">
-            <i class="bi bi-grid-3x3 icons"></i>
+            <i className="bi bi-grid-3x3 icons"></i>
           </Button>
         </ButtonGroup>
       </section>

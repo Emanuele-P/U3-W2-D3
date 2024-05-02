@@ -1,4 +1,4 @@
-import ContentList from './components/ContentList'
+import ContentList from './ContentList'
 
 const Home = () => {
   return (

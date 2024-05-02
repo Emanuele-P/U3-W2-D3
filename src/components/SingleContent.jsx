@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function SingleContent({ src }) {
+const SingleContent = ({ src, imdbID }) => {
   return (
     <div className={`col-6 col-sm-4 col-md-3 col-lg-2 carousel-img`}>
       <div className="img-wrapper">
-        <img src={src} alt="Content card" className="img-fluid" />
+        <Link to={`/details/${imdbID}`}>
+          <img src={src} alt="Content card" className="img-fluid" />
+        </Link>
       </div>
     </div>
   )

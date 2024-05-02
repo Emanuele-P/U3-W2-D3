@@ -27,6 +27,12 @@
     box-shadow: 0 0 5px 0rem rgb(255 255 255 / 33%);
   }
 
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+  font-weight: 500;
+  color: $light;
+}
+
   //footer
 
   .footer-icon {
