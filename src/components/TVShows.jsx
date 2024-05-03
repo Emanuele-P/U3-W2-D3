@@ -3,9 +3,9 @@ import ContentList from './ContentList'
 const TVShows = () => {
   return (
     <>
-      <ContentList headerText={'Trending Now'} searchQuery={'pokemon'} />
-      <ContentList headerText={'Watch It Again'} searchQuery={'digimon'} />
-      <ContentList headerText={'New Releases'} searchQuery={'avatar'} />
+      <ContentList headerText={'Trending Now'} searchQuery={'mandalorian'} />
+      <ContentList headerText={'Watch It Again'} searchQuery={'naruto'} />
+      <ContentList headerText={'New Releases'} searchQuery={'one piece'} />
     </>
   )
 }
